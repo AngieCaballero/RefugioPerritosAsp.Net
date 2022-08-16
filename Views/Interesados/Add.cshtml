@@ -1,0 +1,49 @@
+@model Practica1.Models.Interesados
+
+
+
+<div class="row pb-12 mt-5">
+    <div class="col-md-8 ">
+        <legend class="text-primary">¿Desea adoptar un perrito?</legend>
+        <p>Dogcitos es una organización benefica que cuida y trata de encontrarle un hogar apropiado para todos aquellos perritos que lo necesiten</p>
+        <p>Es necesario conocer sus datos para verificar que ustedes seria un dueño ideal para el canino. Si evaluamos que usted es el dueño ideal para este canino, nos pondremos en contacto con usted inmediatamente.</p>
+        <h5 class="text-secondary">Ingrese sus datos:</h5>
+        <br>
+        <form asp-controller="Interesados" asp-action="Save" method="post" enctype="multipart/form-data">
+            <div class="form-group d-flex mb-3">
+                <label for="Nombre">Nombre:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba su nombre..." required name="Nombre" id="Nombre">
+            </div> 
+            <div class="form-group d-flex mb-3">
+                <label for="Correo">Correo:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba su correo..." required name="Correo" id="Correo">
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Telefono">Teléfono:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba su numero telefonico..." required name="Telefono" id="Telefono">
+            </div>  
+            <div class="form-group d-flex mb-3">
+                <label for="Salario">Salario:</label>
+                <input type="number" class="form-control w-50 mx-3" placeholder="Escriba su salario..." required name="Salario" id="Salario">
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Patio">¿Posee patio?</label>
+                <select class="form-select w-50 mx-3" id="Patio" name="Patio" required>
+                    <option value="Si">Si</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Texto">¿Por qué desea adoptar a este canino?</label>
+                <textarea type="text" class="form-control w-50 mx-3" placeholder="Escriba..." required name="Texto" id="Texto" rows="3"></textarea>
+            </div>
+            <input type="hidden" required name="PerritosId" value="@ViewBag.PerritoId">
+            <div class="d-flex justify-content-start">
+                <button type="submit" class="btn btn-secondary mb-3 w-25">Guardar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <img src="~/Images/adopta.png" class="img-fluid img-custom" style="height: ;" alt=""/>
+    </div>
+</div>

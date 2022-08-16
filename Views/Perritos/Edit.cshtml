@@ -1,0 +1,242 @@
+@model Practica1.Models.Perritos
+
+@ViewData["nom"]
+<div class="row pb-12 mt-5">
+    <div class="col-md-8 ">
+        <legend class="text-primary">¿Desea cambiar la información de este perrito?</legend>
+        <p>Dogcitos es una organización benefica que cuida y trata de encontrarle un hogar apropiado para todos aquellos perritos que lo necesiten</p>
+        <h5 class="text-secondary">Puede cambiar cualquiera de los datos siguientes:</h5>
+        <br>
+        <form asp-controller="Perritos" asp-action="Update" method="post" enctype="multipart/form-data">
+            
+            <input type="number" class="form-control w-50 mx-3" required readonly name="id" id="id" value="@Model.id">
+            
+            <div class="form-group d-flex mb-3">
+                <label for="Nombre">Nombre:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba el nombre..." required name="Nombre" id="Nombre" value="@Model.Nombre">
+            </div> 
+            <div class="form-group d-flex mb-3">
+                <label for="Raza">Raza:</label>
+                @if (@Model.Raza == "Pekinese")
+                {
+                    <select class="form-select w-50 mx-3" id="Raza" name="Raza" required>
+                        <option value="Sin raza">Sin raza</option>
+                        <option value="Pekinese" selected>Pekinese</option>
+                        <option value="Husky Siberiano">Husky Siberiano</option>
+                        <option value="Doberman Pinscher">Doberman Pinscher</option>
+                        <option value="Pastor alemán">Pastor alemán</option>
+                        <option value="Pitbull">Pitbull</option>
+                        <option value="Golden">Golden</option>
+                        <option value="Rottweiler">Rottweiler</option>
+                    </select>
+                } 
+                else if (@Model.Raza == "Husky Siberiano")
+                {
+                    <select class="form-select w-50 mx-3" id="Raza" name="Raza" required>
+                        <option value="Sin raza">Sin raza</option>
+                        <option value="Pekinese">Pekinese</option>
+                        <option value="Husky Siberiano" selected>Husky Siberiano</option>
+                        <option value="Doberman Pinscher">Doberman Pinscher</option>
+                        <option value="Pastor alemán">Pastor alemán</option>
+                        <option value="Pitbull">Pitbull</option>
+                        <option value="Golden">Golden</option>
+                        <option value="Rottweiler">Rottweiler</option>
+                    </select>
+                }
+                else if (@Model.Raza == "Doberman Pinscher")
+                {
+                    <select class="form-select w-50 mx-3" id="Raza" name="Raza" required>
+                        <option value="Sin raza">Sin raza</option>
+                        <option value="Pekinese">Pekinese</option>
+                        <option value="Husky Siberiano">Husky Siberiano</option>
+                        <option value="Doberman Pinscher" selected>Doberman Pinscher</option>
+                        <option value="Pastor alemán">Pastor alemán</option>
+                        <option value="Pitbull">Pitbull</option>
+                        <option value="Golden">Golden</option>
+                        <option value="Rottweiler">Rottweiler</option>
+                    </select>
+                }
+                else if (@Model.Raza == "Pastor alemán")
+                {
+                    <select class="form-select w-50 mx-3" id="Raza" name="Raza" required>
+                        <option value="Sin raza">Sin raza</option>
+                        <option value="Pekinese">Pekinese</option>
+                        <option value="Husky Siberiano">Husky Siberiano</option>
+                        <option value="Doberman Pinscher">Doberman Pinscher</option>
+                        <option value="Pastor alemán" selected>Pastor alemán</option>
+                        <option value="Pitbull">Pitbull</option>
+                        <option value="Golden">Golden</option>
+                        <option value="Rottweiler">Rottweiler</option>
+                    </select>
+                }
+                else if (@Model.Raza == "Pitbull")
+                {
+                    <select class="form-select w-50 mx-3" id="Raza" name="Raza" required>
+                        <option value="Sin raza">Sin raza</option>
+                        <option value="Pekinese">Pekinese</option>
+                        <option value="Husky Siberiano">Husky Siberiano</option>
+                        <option value="Doberman Pinscher">Doberman Pinscher</option>
+                        <option value="Pastor alemán">Pastor alemán</option>
+                        <option value="Pitbull" selected>Pitbull</option>
+                        <option value="Golden">Golden</option>
+                        <option value="Rottweiler">Rottweiler</option>
+                    </select>
+                }
+                else if (@Model.Raza == "Golden")
+                {
+                    <select class="form-select w-50 mx-3" id="Raza" name="Raza" required>
+                        <option value="Sin raza">Sin raza</option>
+                        <option value="Pekinese">Pekinese</option>
+                        <option value="Husky Siberiano">Husky Siberiano</option>
+                        <option value="Doberman Pinscher">Doberman Pinscher</option>
+                        <option value="Pastor alemán">Pastor alemán</option>
+                        <option value="Pitbull">Pitbull</option>
+                        <option value="Golden" selected>Golden</option>
+                        <option value="Rottweiler">Rottweiler</option>
+                    </select>
+                }
+                else if (@Model.Raza == "Rottweiler")
+                {
+                    <select class="form-select w-50 mx-3" id="Raza" name="Raza" required>
+                        <option value="Sin raza">Sin raza</option>
+                        <option value="Pekinese">Pekinese</option>
+                        <option value="Husky Siberiano">Husky Siberiano</option>
+                        <option value="Doberman Pinscher">Doberman Pinscher</option>
+                        <option value="Pastor alemán">Pastor alemán</option>
+                        <option value="Pitbull">Pitbull</option>
+                        <option value="Golden">Golden</option>
+                        <option value="Rottweiler" selected>Rottweiler</option>
+                    </select>
+                }
+                else {
+                    <select class="form-select w-50 mx-3" id="Raza" name="Raza" required>
+                        <option value="Sin raza">Sin raza</option>
+                        <option value="Pekinese">Pekinese</option>
+                        <option value="Husky Siberiano">Husky Siberiano</option>
+                        <option value="Doberman Pinscher">Doberman Pinscher</option>
+                        <option value="Pastor alemán">Pastor alemán</option>
+                        <option value="Pitbull">Pitbull</option>
+                        <option value="Golden">Golden</option>
+                        <option value="Rottweiler">Rottweiler</option>
+                    </select>
+                }
+                
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Color">Color:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba el color del peludito..." required name="Color" id="Color" value="@Model.Color">
+            </div>  
+            <div class="form-group d-flex mb-3">
+                <label for="Edad">Edad:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba la edad del peludito..." required name="Edad" id="Edad" value="@Model.Edad">
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Sexo">Sexo:</label>
+                @if (@Model.Sexo == "Hembra")
+                {
+                    <select class="form-select w-50 mx-3" id="Sexo" name="Sexo" required>
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra" selected>Hembra</option>
+                    </select>  
+                } else {
+                    <select class="form-select w-50 mx-3" id="Sexo" name="Sexo" required>
+                        <option value="Macho">Macho</option>
+                        <option value="Hembra">Hembra</option>
+                    </select>
+                }
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Salud">Salud:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba el estado de salud del peludito..." required name="Salud" id="Salud" value="@Model.Salud">
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Personalidad">Personalidad:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba la personalidad del peludito..." required name="Personalidad" id="Personalidad" value="@Model.Personalidad">
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Descripcion">Descripcion:</label>
+                <textarea type="text" class="form-control w-50 mx-3" placeholder="Escriba una breve descripcion del peludito..." required name="Descripcion" id="Descripcion" rows="3" @Html.Value("@Model.Descripcion")>@Model.Descripcion</textarea>
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Foto">Foto:</label>
+                <input type="file" class="form-control w-50 mx-3" placeholder="Suba una foto del peludito..." name="Foto" id="Foto" value="@Model.Foto">
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Tema">Escoja un color:</label>
+                @if (@Model.Tema == "Azul")
+                {
+                    <select class="form-select w-50 mx-3" id="Tema" name="Tema" required>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Azul" selected>Azul</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Amarillo">Amarillo</option>
+                        <option value="Lila">Lila</option>
+                        <option value="Anaranjado">Anaranjado</option>
+                    </select>
+                }
+                else if (@Model.Tema == "Verde")
+                {
+                    <select class="form-select w-50 mx-3" id="Tema" name="Tema" required>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Verde" selected>Verde</option>
+                        <option value="Amarillo">Amarillo</option>
+                        <option value="Lila">Lila</option>
+                        <option value="Anaranjado">Anaranjado</option>
+                    </select>
+                }
+                else if (@Model.Tema == "Amarillo")
+                {
+                    <select class="form-select w-50 mx-3" id="Tema" name="Tema" required>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Amarillo" selected>Amarillo</option>
+                        <option value="Lila">Lila</option>
+                        <option value="Anaranjado">Anaranjado</option>
+                    </select>
+                }
+                else if (@Model.Tema == "Lila")
+                {
+                    <select class="form-select w-50 mx-3" id="Tema" name="Tema" required>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Amarillo">Amarillo</option>
+                        <option value="Lila" selected>Lila</option>
+                        <option value="Anaranjado">Anaranjado</option>
+                    </select>
+                }
+
+                else if (@Model.Tema == "Anaranjado")
+                {
+                    <select class="form-select w-50 mx-3" id="Tema" name="Tema" required>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Amarillo">Amarillo</option>
+                        <option value="Lila">Lila</option>
+                        <option value="Anaranjado" selected>Anaranjado</option>
+                    </select>
+                }
+                else {
+                    <select class="form-select w-50 mx-3" id="Tema" name="Tema" required>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Amarillo">Amarillo</option>
+                        <option value="Lila">Lila</option>
+                        <option value="Anaranjado">Anaranjado</option>
+                    </select>
+                }
+                
+            </div>
+            <div class="d-flex justify-content-start">
+                <button type="submit" class="btn btn-secondary mb-3 w-25">Guardar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <img src="~/Images/Perritos/@Model.Foto" class="img-fluid img-custom" style="widht: 100%;" alt=""/>
+    </div>
+</div>

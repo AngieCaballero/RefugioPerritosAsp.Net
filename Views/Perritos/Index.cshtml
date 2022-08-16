@@ -1,0 +1,41 @@
+
+@{
+  Layout = "_LayoutPerritos";
+}
+
+@model List<Practica1.Models.Perritos>
+
+@section Arriba{
+  <div class="row justify-content-between mt-4 mb-4">
+    <form class="form-inline col-4" method="POST" action="/Perritos/Find">
+      <div class="form-group d-flex justify-content-start">
+        <input type="text" class="form-control" placeholder="Buscar un perrito" required name="nombre">
+        <button type="submit" class="btn btn-secondary mx-3">Buscar</button>
+      </div> 
+    </form>
+    <div class="col-2 justify-content-end">
+      <a asp-area="" asp-controller="Perritos" asp-action="Add" class="btn btn-secondary mx-3 justify-content-end">Agregar perrito</a>
+    </div>
+  </div>
+}
+
+
+<div class="row">
+    @foreach (var dog in Model)
+    {
+       @Html.DisplayFor(Model => dog);
+    }
+</div>
+
+@section Derecha{
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item bg-light text-end"><a href="/Perritos/filtrar?raza=Sin raza" class="text-secondary">Sin Razas</a></li>
+  <li class="list-group-item bg-light text-end"><a href="/Perritos/filtrar?raza=Pekinese" class="text-secondary">Pekineses</a></li>
+  <li class="list-group-item bg-light text-end"><a href="/Perritos/filtrar?raza=Husky Siberiano" class="text-secondary">Huskys Siberianos</a></li>
+  <li class="list-group-item bg-light text-end"><a href="/Perritos/filtrar?raza=Doberman Pinscher" class="text-secondary">Doberman Pinchers</a></li>
+  <li class="list-group-item bg-light text-end"><a href="/Perritos/filtrar?raza=Pastor alemán" class="text-secondary">Pastor Aleman</a></li>
+  <li class="list-group-item bg-light text-end"><a href="/Perritos/filtrar?raza=Pitbull" class="text-secondary">Pitbulls</a></li>
+  <li class="list-group-item bg-light text-end"><a href="/Perritos/filtrar?raza=Golden" class="text-secondary">Goldens</a></li>
+  <li class="list-group-item bg-light text-end"><a href="/Perritos/filtrar?raza=Rottweiler" class="text-secondary">Rottweilers</a></li>
+</ul>
+}

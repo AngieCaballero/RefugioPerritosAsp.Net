@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <div class="row mt-5">
+        <div class="col text-center">
+            <h1 class="display-4 text-primary">Bienvenidos a Dogcitos!</h1>
+            <p class="text-secondary">Cuando adoptas a una mascota no solo consigues a un compañero de vida, también a un nuevo amiguito que colorea tu mundo <3</p>
+            <img src="~/Images/adopta.png" class="mt-3" width="225px" height="250px" alt="img"/>
+        </div>
+        <div class="col text-center">
+            <img src="~/Images/portada.png" width="400px" height="500px" alt="img"/> <br>
+        </div>
+    </div>
+    <div class="my-5">
+        <h3 class="text-secondary text-center">Voluntarios</h3>
+    </div>
+    <div class="row pb-12">
+        @await Component.InvokeAsync("Voluntarios")
+    </div>
+</div>

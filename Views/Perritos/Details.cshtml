@@ -1,0 +1,80 @@
+@model Practica1.ViewModels.PerritosTestimoniosViewModel
+
+<div class="row justify-content-end mt-5">
+    <a href="/Perritos/Edit/@Model.Perrito.id" class="btn btn-secondary mx-2" style="height: auto; width: 110px;">Editar</a>
+    <a href="#" onclick="CargarRequisitos(event)" class="btn btn-secondary" style="height: auto; width: 110px;">Requisitos</a>
+</div>
+<div class="row w-100 mb-4">
+    <div class="col mr-2">
+        <img src="~/Images/Perritos/@Model.Perrito.Foto" class="h-auto w-75 mt-5 card border-5 border-@Model.Perrito.Tema" alt=""/>   
+    </div>
+    <div class="col ml-2">
+        <h1 class="mt-5 text-@Model.Perrito.Tema">@Model.Perrito.Nombre</h3>
+        <p class=""><b class="text-primary">Raza: </b>@Model.Perrito.Raza</p>
+        <p class=""><b class="text-primary">Color: </b>@Model.Perrito.Color</p>
+        <p class=""><b class="text-primary">Edad: </b>@Model.Perrito.Edad</p>
+        <p class=""><b class="text-primary">Raza: </b>@Model.Perrito.Raza</p>
+        <p class=""><b class="text-primary">Sexo: </b>@Model.Perrito.Sexo</p>
+        <p class=""><b class="text-primary">Estado de salud: </b>@Model.Perrito.Salud</p>
+        <p class=""><b class="text-primary">Personalidad: </b>@Model.Perrito.Personalidad</p>
+        <p class=""><b class="text-primary">Descripción: </b>@Model.Perrito.Descripcion</p>
+    </div>
+</div>
+<div class="mt-5">
+    <h3 class="text-center text-secondary">Testimonios</h3>
+</div>
+<div class="row my-5">
+    @foreach (var item in Model.Testimonios)
+    {
+        <div class="col mx-5">
+            <div class="row mb-3">
+                <img src="~/Images/Perfiles/@item.Imagen" class="mx-auto img-fluid" style="height: 200px; width: auto;" alt=""/> 
+            </div>
+            <div class="row">
+                <p class="text-center">"@item.Testimonio" - @item.Nombre</p>
+                <p class="text-center">@item.Fecha</p>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="mt-5">
+    <h3 class="text-center text-secondary">Interesados</h3>
+</div>
+<div class="row my-5">
+    @foreach (var item in Model.Perrito.Interesados)
+    {
+        <div class="col m-auto my-2">
+            <div class="card border-2 border-@Model.Perrito.Tema" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title text-primary">@item.Nombre</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@item.Correo</h6>
+                <p class="card-text">@item.Texto</p>
+                <a href="#" class="card-link text-secondary">Contactar</a>
+                <a href="/Interesados/Delete/@item.id" class="card-link text-secondary">Eliminar</a>
+              </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-primary">Requisitos</h5>
+      </div>
+      <div id="div_requisito" class="modal-body">
+        <div class="spinner-border mx-auto" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="/Interesados/Add/@Model.Perrito.id" class="btn btn-secondary mx-2" style="height: auto; width: auto;">Me interesa</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

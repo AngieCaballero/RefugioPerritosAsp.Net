@@ -1,0 +1,16 @@
+@model List<Practica1.Models.Voluntarios>
+
+<div class="row justify-content-center" aria-live="polite"  aria-atomic="true" style="min-height: 200px;">
+    @foreach (var item in Model)
+    {
+        <!-- Then put toasts within -->
+        <div class="toast col-md-6 m-3" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+         <div class="mb-3">
+                <img src="~/Images/Voluntarios/@item.Imagen" class="card-img-top img-fluid img-custom" style="height: 200px;" alt=""/>
+                <div class="card-body">
+                    <h4 class="card-title text-primary">@item.Nombre</h4>
+                </div>
+            </div>
+        </div>        
+    }
+</div>

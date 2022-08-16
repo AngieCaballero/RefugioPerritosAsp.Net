@@ -1,0 +1,17 @@
+@model Practica1.Models.Perritos
+
+ <div class="col-md-3 mb-3">
+            <div class="card mb-3 ml-3 h-100 border-2 border-@Model.Tema">
+                <div class="bc">
+                    <img src="~/Images/Perritos/@Model.Foto" class="card-img-top img-fluid img-custom" style="height: 200px;" alt=""/>
+                    <button onclick="deletePerrito(@Model.id)" type="button" class="m-0 btn-close b" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title text-primary">@Model.Nombre</h4>
+                    <p class="card-text">@Model.Personalidad</p>
+                    <a href="/Perritos/Details/@Model.id" class="btn bg-@Model.Tema">Detalles</a>
+                </div>
+            </div>
+</div>

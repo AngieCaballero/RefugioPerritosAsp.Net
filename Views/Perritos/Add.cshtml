@@ -1,0 +1,78 @@
+@model Practica1.Models.Perritos
+
+@ViewData["nom"]
+<div class="row pb-12 mt-5">
+    <div class="col-md-8 ">
+        <legend class="text-primary">¿Encontró un perrito sin hogar? ¡Este es su lugar!</legend>
+        <p>Dogcitos es una organización benefica que cuida y trata de encontrarle un hogar apropiado para todos aquellos perritos que lo necesiten</p>
+        <h5 class="text-secondary">Ingrese los datos del peludito:</h5>
+        <br>
+        <form asp-controller="Perritos" asp-action="Save" method="post" enctype="multipart/form-data">
+            <div class="form-group d-flex mb-3">
+                <label for="Nombre">Nombre:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba el nombre..." required name="Nombre" id="Nombre">
+            </div> 
+            <div class="form-group d-flex mb-3">
+                <label for="Raza">Raza:</label>
+                <select class="form-select w-50 mx-3" id="Raza" name="Raza" required>
+                    <option value="Sin raza">Sin raza</option>
+                    <option value="Pekinese">Pekinese</option>
+                    <option value="Husky Siberiano">Husky Siberiano</option>
+                    <option value="Doberman Pinscher">Doberman Pinscher</option>
+                    <option value="Pastor alemán">Pastor alemán</option>
+                    <option value="Pitbull">Pitbull</option>
+                    <option value="Golden">Golden</option>
+                    <option value="Rottweiler">Rottweiler</option>
+                </select>
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Color">Color:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba el color del peludito..." required name="Color" id="Color">
+            </div>  
+            <div class="form-group d-flex mb-3">
+                <label for="Edad">Edad:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba la edad del peludito..." required name="Edad" id="Edad">
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Sexo">Sexo:</label>
+                <select class="form-select w-50 mx-3" id="Sexo" name="Sexo" required>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Salud">Salud:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba el estado de salud del peludito..." required name="Salud" id="Salud">
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Personalidad">Personalidad:</label>
+                <input type="text" class="form-control w-50 mx-3" placeholder="Escriba la personalidad del peludito..." required name="Personalidad" id="Personalidad">
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Descripcion">Descripcion:</label>
+                <textarea type="text" class="form-control w-50 mx-3" placeholder="Escriba una breve descripcion del peludito..." required name="Descripcion" id="Descripcion" rows="3"></textarea>
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Foto">Foto:</label>
+                <input type="file" class="form-control w-50 mx-3" placeholder="Suba una foto del peludito..." required name="Foto" id="Foto">
+            </div>
+            <div class="form-group d-flex mb-3">
+                <label for="Tema">Escoja un color:</label>
+                <select class="form-select w-50 mx-3" id="Tema" name="Tema" required>
+                    <option value="Rosa">Rosa</option>
+                    <option value="Azul">Azul</option>
+                    <option value="Verde">Verde</option>
+                    <option value="Amarillo">Amarillo</option>
+                    <option value="Lila">Lila</option>
+                    <option value="Anaranjado">Anaranjado</option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-start">
+                <button type="submit" class="btn btn-secondary mb-3 w-25">Guardar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <img src="~/Images/perrito.jpg" class="img-fluid img-custom" style="height: ;" alt=""/>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+a {
+    text-decoration: none;
+}
+
+.text-Rosa {
+    color: #fec8d8;
+}
+
+.bg-Rosa {
+    background-color: #fec8d8;
+}
+
+.border-Rosa {
+    border-color: #fec8d8;
+}
+
+.text-Azul {
+    color: #a0d2f3;
+}
+
+.bg-Azul {
+    background-color: #a0d2f3;
+}
+
+.border-Azul {
+    border-color: #a0d2f3;
+}
+
+.text-Verde {
+    color: #95fab9;
+}
+
+.bg-Verde {
+    background-color: #95fab9;
+}
+
+.border-Verde {
+    border-color: #95fab9;
+}
+
+.text-Lila {
+    color: #e0bbe4;
+}
+
+.bg-Lila {
+    background-color: #e0bbe4;
+}
+
+.border-Lila {
+    border-color: #e0bbe4;
+}
+
+.text-Amarillo {
+    color: #f4fab4;
+}
+
+.bg-Amarillo {
+    background-color: #f4fab4;
+}
+
+.border-Amarillo {
+    border-color: #f4fab4;
+}
+
+.text-Anaranjado {
+    color: #ffda9e;
+}
+
+.bg-Anaranjado {
+    background-color: #ffda9e;
+}
+
+.border-Anaranjado {
+    border-color: #ffda9e;
+}
+
+.bc {
+    display: inline-block;
+    position: relative;
+}
+
+.b {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
